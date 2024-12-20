@@ -28,5 +28,16 @@ public class VeiculoController {
     public void listVeiculos() {
         view.exibirVeiculos(veiculos);
     }
+    public void deleteVeiculo(int id) {
+        for (VeiculoModel veiculo: veiculos) {
+            if (veiculo.getId() == id) {
+                veiculos.remove(veiculo);
+                System.out.println(veiculo.getModelo() + " Veiculo deletado com sucesso!");	
+                return;
+            } else {
+                view.mensagemErro("Veiculo não encontrado!");
+            }
+        }
+    }
     
 }

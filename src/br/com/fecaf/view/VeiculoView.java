@@ -24,7 +24,7 @@ public class VeiculoView {
     }
 
     public void mensagemSucesso(String veiculo) {
-        System.out.println("Veiculo" + veiculo + "cadastrado com sucesso!");
+        System.out.println("Veiculo:\n" + veiculo + "cadastrado com sucesso!");
     }
 
     public void mensagemErro(String erro){

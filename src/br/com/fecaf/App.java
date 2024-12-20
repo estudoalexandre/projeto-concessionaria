@@ -18,7 +18,8 @@ public class App {
             System.out.println("Escolha uma opção: ");
             System.out.println("1 - Cadastrar veículo");
             System.out.println("2 - Listar veículos");
-            System.out.println("3 - Sair");
+            System.out.println("3 - Deletar veículo");
+            System.out.println("4 - Sair");
             int opcao = scanner.nextInt();
             scanner.nextLine();
 
@@ -53,7 +54,12 @@ public class App {
                 case 2: 
                     controller.listVeiculos();
                     break;
-                case 3: 
+                case 3:
+                    System.out.println("Digite o ID do veículo que deseja deletar: ");
+                    int id = scanner.nextInt();
+                    controller.deleteVeiculo(id);
+                    break;
+                case 4: 
                     continuar = false;
                     System.out.println("Saindo do sistema...");
                     break;
