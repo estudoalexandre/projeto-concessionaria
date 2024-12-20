@@ -28,6 +28,7 @@ public class VeiculoController {
     public void listVeiculos() {
         view.exibirVeiculos(veiculos);
     }
+
     public void deleteVeiculo(int id) {
         for (VeiculoModel veiculo: veiculos) {
             if (veiculo.getId() == id) {
@@ -38,6 +39,41 @@ public class VeiculoController {
                 view.mensagemErro("Veiculo não encontrado!");
             }
         }
+    }
+
+    public void editarVeiculo(int id, String marca, String modelo, String tipoVeiculo, int anoFabricacao, double preco, String statusDisponibilidade, String cor, int quilometragem, String tipoCombustivel, int numeroPortas, String tipoCambio) {
+        boolean veiculoEncontrado = false;
+
+        for (VeiculoModel veiculo: veiculos) {
+            if (veiculo.getId() == id) {
+                veiculo.setMarca(marca);
+                veiculo.setModelo(modelo);
+                veiculo.setTipoVeiculo(tipoVeiculo);
+                veiculo.setAnoFabricacao(anoFabricacao);
+                veiculo.setPreco(preco);
+                veiculo.setStatusDisponibilidade(statusDisponibilidade);
+                veiculo.setCor(cor);
+                veiculo.setQuilometragem(quilometragem);
+                veiculo.setTipoCombustivel(tipoCombustivel);
+                veiculo.setNumeroPortas(numeroPortas);
+                veiculo.setTipoCambio(tipoCambio);
+                System.out.println(veiculo.getModelo() + " Veiculo editado com sucesso!");
+                veiculoEncontrado = true;
+            } 
+        }
+
+        if (!veiculoEncontrado) {
+            view.mensagemErro("Veiculo não encontrado!");
+        }
+    }
+
+    public boolean veiculoExiste(int id) {
+        for (VeiculoModel veiculo: veiculos) {
+            if (veiculo.getId() == id) {
+                return true;
+            }
+        }
+        return false;
     }
     
 }
