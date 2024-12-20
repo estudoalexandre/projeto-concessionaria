@@ -1,4 +1,4 @@
-package model;
+package br.com.fecaf.model;
 
 public class VeiculoModel {
     private String marca;
