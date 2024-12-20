@@ -7,6 +7,7 @@ import br.com.fecaf.model.VeiculoModel;
 public class VeiculoView {
     public void exibirVeiculos(List<VeiculoModel> veiculos) {
         for (VeiculoModel veiculo : veiculos) {
+            System.out.println("ID: " + veiculo.getId());
             System.out.println("Marca: " + veiculo.getMarca());
             System.out.println("Modelo: " + veiculo.getModelo());
             System.out.println("Tipo de Veículo: " + veiculo.getTipoVeiculo());

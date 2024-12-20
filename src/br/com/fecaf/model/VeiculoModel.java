@@ -1,6 +1,10 @@
 package br.com.fecaf.model;
 
 public class VeiculoModel {
+
+    private static int contadorId = 1;
+
+    private int id;
     private String marca;
     private String modelo;
     private String tipoVeiculo;
@@ -15,7 +19,10 @@ public class VeiculoModel {
     private int numeroPortas;
     private String tipoCambio;
 
-    public VeiculoModel(String marca, String modelo, String tipoVeiculo, int anoFabricacao, double preco, String statusDisponibilidade, String cor, int quilometragem, String tipoCombustivel, int numeroPortas, String tipoCambio) {
+     public VeiculoModel(String marca, String modelo, String tipoVeiculo, int anoFabricacao, double preco,
+                        String statusDisponibilidade, String cor, int quilometragem, String tipoCombustivel,
+                        int numeroPortas, String tipoCambio) {
+        this.id = contadorId++;
         this.marca = marca;
         this.modelo = modelo;
         this.tipoVeiculo = tipoVeiculo;
@@ -27,6 +34,10 @@ public class VeiculoModel {
         this.tipoCombustivel = tipoCombustivel;
         this.numeroPortas = numeroPortas;
         this.tipoCambio = tipoCambio;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getMarca() {
